@@ -1,40 +1,17 @@
-server:
-  port: 9527
-
-
-
 spring:
-   application:
-    name: springcloud-zuui-geteway   #这个名字决定不能改。三个微服务属于同一个app
+  application:
+    name: springcloud-config-default
+  profiles:
+    active:
+    - dev
+---
+spring:
+  application:
+    name: springcloud-config-dev
+  profiles: dev
 
-eureka:
-#  server:
-#    enable-self-preservation: false是否关闭eureka的保护机制
-  client: #客户端注册进eureka服务列表内
-    service-url:
-      #单机
-      #defaultZone: http://localhost:7001/eureka
-      #集群
-       defaultZone: http://www.eureka7001.com:7001/eureka/,http://www.eureka7002.com:7002/eureka/,http://www.eureka7003.com:7003/eureka/
-  instance:
-    instance-id: www.zuui.com #设置服务名称。在eureka的别名
-    prefer-ip-address: true     #访问路径可以显示IP地址
-#info是点击微服务显示的信息 也是euraka发现微服务的信息
-
-#网关映射
-zuul:
-  #忽略http://www.zuui.com:9527/springcloud-dept/dept/findAll的直接使用，只可以用http://www.zuui.com:9527/mydept/dept/findAll
-  #ignored-services: microservicecloud-dept
-  #设置统一前缀 网关的地址/前缀/映射的名称/CURD操作
-  prefix: /atguigu
-  #使用*可以让所有的微服务都不能通过网关的地址/微服务模块的名称/CURD操作访问。只能用映射访问 网关的地址/映射的名称/CURD操作
-  ignored-services: "*"
-  routes:
-    mydept.serviceId: springcloud-dept  #微服务模块名
-    mydept.path: /mydept/**    #http://www.zuui.com:9527/mydept/dept/findAll  x相当于mydept映射成了springcloud-dept
-
-info:
-  app.name: atguigu-microservicecloud
-  company.name: www.atguigu.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+---
+spring:
+  application:
+    name: springcloud-config-test
+  profiles: test
