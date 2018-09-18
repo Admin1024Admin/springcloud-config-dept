@@ -1,9 +1,10 @@
 server:
   port: 8006
 spring:
+   profiles: dev
    application:
     name: springcloud-dept                                 #这个名字决定不能改。三个微服务属于同一个app
-   profiles: dev
+   
 eureka:
 #  server:
 #    enable-self-preservation: false是否关闭eureka的保护机制
@@ -15,9 +16,10 @@ eureka:
 server:
   port: 8007
 spring:
+   profiles: test
    application:
     name: springcloud-dept                                 #这个名字决定不能改。三个微服务属于同一个app
-   profiles: test
+   
 eureka:
 #  server:
 #    enable-self-preservation: false是否关闭eureka的保护机制
