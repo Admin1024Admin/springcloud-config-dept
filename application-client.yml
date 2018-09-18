@@ -1,16 +1,16 @@
-server:
+ï»¿server:
   port: 8006
 spring:
    profiles: dev
    application:
-    name: springcloud-dept                                 #Õâ¸öÃû×Ö¾ö¶¨²»ÄÜ¸Ä¡£Èı¸öÎ¢·şÎñÊôÓÚÍ¬Ò»¸öapp
+    name: springcloud-dept                                 #è¿™ä¸ªåå­—å†³å®šä¸èƒ½æ”¹ã€‚ä¸‰ä¸ªå¾®æœåŠ¡å±äºåŒä¸€ä¸ªapp
    
 eureka:
 #  server:
-#    enable-self-preservation: falseÊÇ·ñ¹Ø±ÕeurekaµÄ±£»¤»úÖÆ
-  client: #¿Í»§¶Ë×¢²á½øeureka·şÎñÁĞ±íÄÚ
+#    enable-self-preservation: falseæ˜¯å¦å…³é—­eurekaçš„ä¿æŠ¤æœºåˆ¶
+  client: #å®¢æˆ·ç«¯æ³¨å†Œè¿›eurekaæœåŠ¡åˆ—è¡¨å†…
     service-url:
-      #µ¥»ú
+      #å•æœº
       defaultZone: http://localhost:7001/eureka
 ---
 server:
@@ -18,12 +18,12 @@ server:
 spring:
    profiles: test
    application:
-    name: springcloud-dept                                 #Õâ¸öÃû×Ö¾ö¶¨²»ÄÜ¸Ä¡£Èı¸öÎ¢·şÎñÊôÓÚÍ¬Ò»¸öapp
+    name: springcloud-dept                                 #è¿™ä¸ªåå­—å†³å®šä¸èƒ½æ”¹ã€‚ä¸‰ä¸ªå¾®æœåŠ¡å±äºåŒä¸€ä¸ªapp
    
 eureka:
 #  server:
-#    enable-self-preservation: falseÊÇ·ñ¹Ø±ÕeurekaµÄ±£»¤»úÖÆ
-  client: #¿Í»§¶Ë×¢²á½øeureka·şÎñÁĞ±íÄÚ
+#    enable-self-preservation: falseæ˜¯å¦å…³é—­eurekaçš„ä¿æŠ¤æœºåˆ¶
+  client: #å®¢æˆ·ç«¯æ³¨å†Œè¿›eurekaæœåŠ¡åˆ—è¡¨å†…
     service-url:
-      #µ¥»ú
+      #å•æœº
       defaultZone: http://localhost:7001/eureka
