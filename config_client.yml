@@ -1,6 +1,6 @@
 spring:
    application:
-    name: config-client232
+    name: config-client
     profiles:
       active:
          - dev
